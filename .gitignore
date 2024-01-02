@@ -6,6 +6,15 @@
 *.lo
 *.o
 *.obj
+*.obj
+*.ilk
+*.pdb
+*.log
+*.tlog
+*.pch
+*.idb
+*.recipe
+*.res
 
 # Precompiled Headers
 *.gch
@@ -14,7 +23,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+# *.dll
 
 # Fortran module files
 *.mod
@@ -24,9 +33,18 @@
 *.lai
 *.la
 *.a
-*.lib
+# *.lib
+*.exp
 
 # Executables
-*.exe
+# *.exe
 *.out
 *.app
+
+x64/
+.vs/
+Project/.vs/
+bin/
+obj/
+Thirdparty/imgui-1.89.2/bin
+Thirdparty/GLAD/bin-int
