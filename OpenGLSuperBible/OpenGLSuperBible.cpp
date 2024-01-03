@@ -29,8 +29,8 @@ public:
 	{
 		sb7::application::init();
 
-		info.windowWidth = 1280;
-		info.windowHeight = 720;
+		info.windowWidth = 800;
+		info.windowHeight = 600;
 	}
 
 	void startup() override
@@ -43,6 +43,10 @@ public:
 		glEnable(GL_DEPTH_TEST);
 
 		glViewport(0, 0, info.windowWidth, info.windowHeight);
+
+		glCreateVertexArrays(1, &VAO);
+
+		glBindVertexArray(VAO);
 	}
 
 	void update(double currentTime) override
@@ -56,10 +60,17 @@ public:
 
 		glClearBufferfv(GL_COLOR, 0, clearColor);
 		glClearBufferfv(GL_DEPTH, 0, &one);
+
+		shader.use();
+
+		glPointSize(10.0f);
+
+		glDrawArrays(GL_POINTS, 0, 1);
 	}
 
 	void shutdown() override
 	{
+		glDeleteVertexArrays(1, &VAO);
 	}
 
 	void onResize(int w, int h) override
@@ -71,6 +82,7 @@ public:
 
 protected:
 	Shader shader;
+	GLuint VAO;
 	const float FrameTime = 0.016667f;
 };
 
