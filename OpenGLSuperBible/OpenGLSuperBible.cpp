@@ -63,9 +63,7 @@ public:
 
 		shader.use();
 
-		glPointSize(10.0f);
-
-		glDrawArrays(GL_POINTS, 0, 1);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	void shutdown() override
