@@ -63,6 +63,11 @@ public:
 
 		shader.use();
 
+		GLfloat attrib[] = { std::sinf(currentTime) * 0.5f,
+							  std::cosf(currentTime) * 0.6f, 0.0f, 0.0f };
+
+		glVertexAttrib4fv(0, attrib);
+
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
