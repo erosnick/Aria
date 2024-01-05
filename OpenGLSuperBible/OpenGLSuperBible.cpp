@@ -68,6 +68,10 @@ public:
 
 		glVertexAttrib4fv(0, attrib);
 
+		GLfloat color[] = { std::sinf(currentTime) * 0.5f + 0.5f, std::cosf(currentTime) * 0.5f + 0.5f };
+
+		glVertexAttrib4fv(1, color);
+
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
